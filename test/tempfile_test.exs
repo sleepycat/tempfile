@@ -24,11 +24,11 @@ defmodule TempfileTest do
   end
 
   test "it has and open function" do
-    assert {:ok, _} = Tempfile.open
+    assert {:ok, _fd, _path} = Tempfile.open
   end
 
   test "it can be closed after opening" do
-    {:ok, tmp} = Tempfile.open
+    {:ok, tmp, _path} = Tempfile.open
     assert :ok = Tempfile.close(tmp)
   end
 

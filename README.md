@@ -4,7 +4,8 @@ Tempfile
 As the name suggests this library creates tempfiles for Elixir.
 
 ```elixir
-{:ok, tempfile} = Tempfile.open
+{:ok, tempfile, path} = Tempfile.open
+# {:ok, #PID<0.112.0>, "/tmp/wn0FE2xHiJiX32pE4fRwcthuQxRtSdU3.tmp"}
 :ok = Tempfile.close(tmp)
 ```
 
