@@ -32,4 +32,10 @@ defmodule TempfileTest do
     assert :ok = Tempfile.close(tmp)
   end
 
+  test "it can be written to" do
+    {:ok, _tmp, path} = Tempfile.open
+    :ok = File.write path, "foo"
+    assert {:ok, "foo"} = File.read path
+  end
+
 end
