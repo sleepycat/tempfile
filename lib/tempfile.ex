@@ -4,7 +4,7 @@ defmodule Tempfile do
 
   def open do
     path = Path.join([System.tmp_dir!, generate_filename])
-    {:ok, file} = File.open(path, [:read, :write, :exclusive])
+    {:ok, file} = File.open(path, [:read, :write])
     :ok = File.chmod!(path, 0o600)
     {:ok, file, path}
   end
