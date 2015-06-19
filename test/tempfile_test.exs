@@ -38,4 +38,10 @@ defmodule TempfileTest do
     assert {:ok, "foo"} = File.read path
   end
 
+  test "the permissions are 600" do
+    {:ok, _tmp, path} = Tempfile.open
+    permissions = :os.cmd('/usr/bin/ls -l #{path} | cut -d\' \' -f1')
+    assert String.match? to_string(permissions), ~r/\-rw\-\-\-\-\-\-\-\n/
+  end
+
 end
