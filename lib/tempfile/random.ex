@@ -1,4 +1,4 @@
-defmodule Random do
+defmodule Tempfile.Random do
 
   def selections charset, number, seed \\ nil do
     seed_the_prng(seed)

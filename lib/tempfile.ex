@@ -1,6 +1,8 @@
-require Random
+require Tempfile.Random
 
 defmodule Tempfile do
+
+  alias Tempfile.Random, as: Random
 
   def open do
     path = Path.join([System.tmp_dir!, generate_filename])

@@ -1,4 +1,4 @@
-defmodule RandomTest do
+defmodule TempfileRandomTest do
   use ExUnit.Case
 
   setup do
@@ -7,11 +7,11 @@ defmodule RandomTest do
   end
 
   test "it randomly selects from the given set of characters" do
-    assert Random.selections("a", 1) == "a"
+    assert Tempfile.Random.selections("a", 1) == "a"
   end
 
   test "it returns the number of characters requested", context do
-    assert Random.selections("abc123", 10, context[:seed]) == "c231b132c1"
+    assert Tempfile.Random.selections("abc123", 10, context[:seed]) == "c231b132c1"
   end
 
 end
