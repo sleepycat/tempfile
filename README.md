@@ -17,12 +17,16 @@ whatever directory is returned by System.tmp_dir.
 
 Just add this repo to your mix.exs and then run mix deps.get
 ```elixir
+  def application do
+    [
+      #...
+      applications: [:tempfile]
+    ]
+  end
+
   defp deps do
     [
-      {:phoenix, "~> 0.13.1"},
-      {:phoenix_html, "~> 1.0"},
-      {:phoenix_live_reload, "~> 0.4", only: :dev},
-      {:cowboy, "~> 1.0"},
+      #...
       {:tempfile, github: "sleepycat/tempfile"}
     ]
   end
